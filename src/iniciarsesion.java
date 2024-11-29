@@ -189,11 +189,7 @@ public class iniciarsesion extends javax.swing.JFrame {
     
     public static void main(String args[]) {
         
-        usuarios[0]="reyna";
-        contras[0]="1234";
-        nombres[0]="reyna";
-        puntos[0]= 0;
-        jugador
+       
         
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {

@@ -12,7 +12,7 @@ import javax.swing.JLabel;
  */
 public class xo extends javax.swing.JFrame {
 
- 
+ iniciarsesion iniciar=new iniciarsesion();
  String turno="X" ;
  String jugador1="",jugador2="", ganador ;
     JLabel labels[][]=new JLabel[3][3];
@@ -215,7 +215,6 @@ public class xo extends javax.swing.JFrame {
                         .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE))))
         );
 
-        jTextField1.setEditable(false);
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
@@ -225,8 +224,6 @@ public class xo extends javax.swing.JFrame {
         jLabel10.setText("Jugador 1");
 
         jLabel11.setText("Jugador 2");
-
-        jTextField2.setEditable(false);
 
         jButton1.setText("Iniciar Juego");
         jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
