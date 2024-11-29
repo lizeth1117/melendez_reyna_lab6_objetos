@@ -11,7 +11,7 @@ import javax.swing.JOptionPane;
  * @author lizet
  */
 public class iniciarsesion extends javax.swing.JFrame {
- String username, password;
+ String username, password,jugador1,jugador2;
  xo xo=new xo();
 
  
@@ -126,7 +126,7 @@ public class iniciarsesion extends javax.swing.JFrame {
     }//GEN-LAST:event_btnloginActionPerformed
 
 
-    
+    jugador jugadores[]= new jugador[30];
     public static String[] usuarios = new String [20];
     public static String[] contras = new String [20];
     public static String[] nombres = new String [20];
@@ -136,14 +136,15 @@ public class iniciarsesion extends javax.swing.JFrame {
         usuarios[0]="reyna";
         contras[0]="1234";
         nombres[0]="reyna";
-        puntos[0]=0;        
+        puntos[0]=0; 
         
+        jugadores[0]=new jugador(usuarios[0],contras[0],nombres[0],puntos[0]);
         
     }
     
     public void registrarUsuario(String nombre, String username,String password,int puntos) {
   boolean existe = false;
-    for (int i = 0; i < usuarios.length-1; i++) {
+    for (int i = 0; i < usuarios.length; i++) {
         if (usuarios[i].equals(username)) {
             existe = true;
             JOptionPane.showMessageDialog(null, "El nombre de usuario ya existe.");
@@ -151,9 +152,12 @@ public class iniciarsesion extends javax.swing.JFrame {
         }
         else  {
             // Agregar el nuevo jugador a la posición vacía
-            usuarios[i+1] = username;
-            contras[i+1]= password;
-            nombres[0]=nombre ;
+            usuarios[i] = username;
+            contras[i]= password;
+            nombres[i]=nombre ;
+            
+            jugadores[i]=new jugador(usuarios[i],contras[i],nombres[i],0);
+            
             
          
             
@@ -172,9 +176,10 @@ public class iniciarsesion extends javax.swing.JFrame {
     }
     if (encontrado) {
           JOptionPane.showMessageDialog(null, "Inicio de sesión exitoso!");
+          jugador1=jtuser.getText();
           
-        
     }
+        
     else{
         JOptionPane.showMessageDialog(null,"el usuario no se encontro");
         encontrado=false;
@@ -188,6 +193,7 @@ public class iniciarsesion extends javax.swing.JFrame {
         contras[0]="1234";
         nombres[0]="reyna";
         puntos[0]= 0;
+        jugador
         
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
