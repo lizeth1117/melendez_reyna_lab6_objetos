@@ -12,7 +12,6 @@ import javax.swing.JLabel;
  */
 public class xo extends javax.swing.JFrame {
 
- iniciarsesion iniciar=new iniciarsesion();
  String turno="X" ;
  String jugador1="",jugador2="", ganador ;
     JLabel labels[][]=new JLabel[3][3];
